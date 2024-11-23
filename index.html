@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pincode Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group, .filter-group {
+    margin: 10px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #007BFF;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}
+
+.details, .filtered-results {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.details div, .filtered-results div {
+    margin: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pincode Lookup</h1>
+        <div class="form-group">
+            <input type="text" id="pincodeInput" placeholder="Enter 6-digit pincode">
+            <button id="lookupButton" class="button">Lookup</button>
+        </div>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="error" class="error"></div>
+        <div id="details" class="details"></div>
+        <div class="filter-group" style="display: none;">
+            <input type="text" id="filterInput" placeholder="Filter by post office name">
+        </div>
+        <div id="filteredResults" class="filtered-results"></div>
+    </div>
+    <script src="script.js">
+</script>
+</body>
+</html>
